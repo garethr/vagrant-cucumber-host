@@ -1,24 +1,30 @@
-# Vagrant::Cucumber::Host
+A Vagrant plugin which allows running cucumber tests on the
+local host as a provisioner. 
 
-TODO: Write a gem description
+This could be useful for running acceptance tests for a Vagrant setup,
+including for a multibox setup.
 
 ## Installation
 
-Add this line to your application's Gemfile:
+Install this plugin via the `vagrant` command.
 
-    gem 'vagrant-cucumber-host'
-
-And then execute:
-
-    $ bundle
-
-Or install it yourself as:
-
-    $ gem install vagrant-cucumber-host
+    vagrant plugin install vagrant-cucumber-host
 
 ## Usage
 
-TODO: Write usage instructions here
+```ruby
+Vagrant.require_plugin "vagrant-cucumber-host"
+
+Vagrant.configure("2") do |config|
+  config.vm.box = "precise64"
+
+  config.vm.provision :cucumber do |cucumber|
+    cucumber.features = []
+  end
+end
+```
+
+See the examples folder for more.
 
 ## Contributing
 

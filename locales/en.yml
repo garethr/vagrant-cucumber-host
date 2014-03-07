@@ -1,0 +1,9 @@
+---
+en:
+  vagrant:
+    config:
+      cucumber:
+        no_features: |-
+          You must list at least one feature
+        missing_features: |-
+          These files were specified, but could not be found: %{files}

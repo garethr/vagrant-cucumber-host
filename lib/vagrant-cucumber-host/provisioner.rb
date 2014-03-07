@@ -1,17 +1,18 @@
-require 'cucumber'
+require 'cucumber/cli/main'
+require 'gherkin/formatter/ansi_escapes'
 
 module VagrantPlugins
   module Cucumber
     class Provisioner < Vagrant.plugin('2', :provisioner)
+      include Gherkin::Formatter::AnsiEscapes
       def initialize(machine, config)
         super(machine, config)
 
         @features = config.features
       end
       def provisioner
-        runtime = Cucumber::Runtime.new
-        runtime.load_programming_language('rb')
-        Cucumber::Cli::Main.new([@features]).execute!(runtime)
+        failure = Cucumber::Cli::Main.new([@features]).execute!
+        raise "Cucumber failed" if failure
       end
     end
   end

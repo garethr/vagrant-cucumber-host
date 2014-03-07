@@ -19,10 +19,6 @@ module VagrantPlugins
       def validate(machine)
         errors = _detected_errors
 
-        if @features.nil? || @features.empty?
-          errors << I18n.t('vagrant.config.cucumber.no_features')
-        end
-
         missing_files = @features.select { |path| !File.file?(path) }
         unless missing_files.empty?
           errors << I18n.t('vagrant.config.cucumber.missing_features', files: missing_files.join(', '))

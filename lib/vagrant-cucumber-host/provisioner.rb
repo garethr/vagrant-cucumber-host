@@ -10,7 +10,9 @@ module VagrantPlugins
       end
       def provisioner
         require 'vagrant-cucumber-host/formatter'
+        puts "does this appear?"
         failure = Cucumber::Cli::Main.new([@features]).execute!
+        puts failure
       end
     end
   end

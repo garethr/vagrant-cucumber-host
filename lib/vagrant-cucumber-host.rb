@@ -2,7 +2,7 @@ require "vagrant-cucumber-host/plugin"
 require "vagrant-cucumber-host/version"
 
 module VagrantPlugins
-  module Cucumber
+  module CucumberHost
     def self.source_root
       @source_root ||= Pathname.new(File.expand_path('../../', __FILE__))
     end

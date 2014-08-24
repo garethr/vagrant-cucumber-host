@@ -1,5 +1,5 @@
 module VagrantPlugins
-  module Cucumber
-    VERSION = "0.1.14"
+  module CucumberHost
+    VERSION = "0.2.0"
   end
 end

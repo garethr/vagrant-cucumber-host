@@ -1,7 +1,7 @@
 require 'cucumber'
 
 module VagrantPlugins
-  module Cucumber
+  module CucumberHost
     class Provisioner < Vagrant.plugin('2', :provisioner)
       def initialize(machine, config)
         super(machine, config)

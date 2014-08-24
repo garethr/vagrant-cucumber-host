@@ -1,17 +1,17 @@
 module VagrantPlugins
-  module Cucumber
+  module CucumberHost
     class Plugin < Vagrant.plugin('2')
-      name 'cucumber'
+      name 'cucumber_host'
       description <<-DESC
       This plugin executes a cucumber suite on the host running Vagrant.
       DESC
 
-      config(:cucumber, :provisioner) do
+      config(:cucumber_host, :provisioner) do
         require_relative 'config'
         Config
       end
 
-      provisioner(:cucumber) do
+      provisioner(:cucumber_host) do
         require_relative 'provisioner'
         Provisioner
       end

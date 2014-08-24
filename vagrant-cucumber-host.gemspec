@@ -5,7 +5,7 @@ require 'vagrant-cucumber-host/version'
 
 Gem::Specification.new do |spec|
   spec.name          = "vagrant-cucumber-host"
-  spec.version       = VagrantPlugins::Cucumber::VERSION
+  spec.version       = VagrantPlugins::CucumberHost::VERSION
   spec.authors       = ["Gareth Rushgrove"]
   spec.email         = ["gareth@morethanseven.net"]
   spec.description   = %q{Run cucumber features as a Vagrant provisioner}

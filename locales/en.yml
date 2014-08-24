@@ -2,7 +2,7 @@
 en:
   vagrant:
     config:
-      cucumber:
+      cucumber_host:
         no_features: |-
           You must list at least one feature
         missing_features: |-

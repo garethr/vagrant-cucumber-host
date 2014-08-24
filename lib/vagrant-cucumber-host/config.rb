@@ -1,5 +1,5 @@
 module VagrantPlugins
-  module Cucumber
+  module CucumberHost
     class Config < Vagrant.plugin('2', :config)
       attr_accessor :features
 
@@ -21,10 +21,10 @@ module VagrantPlugins
 
         missing_files = @features.select { |path| !File.file?(path) }
         unless missing_files.empty?
-          errors << I18n.t('vagrant.config.cucumber.missing_features', files: missing_files.join(', '))
+          errors << I18n.t('vagrant.config.cucumber_host.missing_features', files: missing_files.join(', '))
         end
 
-        { 'cucumber provisioner' => errors }
+        { 'cucumber host provisioner' => errors }
       end
     end
   end

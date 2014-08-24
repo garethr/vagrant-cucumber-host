@@ -10,7 +10,7 @@ Vagrant.configure('2') do |config|
     config.vm.define node_name do |node|
       node.vm.hostname  = node_name
       # only run the cucumber provisioner once
-      node.vm.provision :cucumber if i == nodes.size-1
+      node.vm.provision :cucumber_host if i == nodes.size-1
     end
   end
 end

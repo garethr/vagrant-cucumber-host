@@ -18,7 +18,7 @@ Vagrant.require_plugin "vagrant-cucumber-host"
 Vagrant.configure("2") do |config|
   config.vm.box = "precise64"
 
-  config.vm.provision :cucumber do |cucumber|
+  config.vm.provision :cucumber_host do |cucumber|
     cucumber.features = []
   end
 end
